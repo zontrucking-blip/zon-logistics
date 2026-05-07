@@ -161,13 +161,26 @@ function EmailCaptureForm() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 800));
-    setLoading(false);
-    setSubmitted(true);
+    setError("");
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, company, email }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error);
+      setSubmitted(true);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   if (submitted) {
@@ -222,6 +235,9 @@ function EmailCaptureForm() {
           className={inputClass}
         />
       </div>
+      {error && (
+        <p className="text-red-600 text-sm text-center">{error}</p>
+      )}
       <button
         type="submit"
         disabled={loading}

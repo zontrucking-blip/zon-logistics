@@ -5,7 +5,8 @@
       "Bash(npx next *)",
       "Bash(gh auth *)",
       "PowerShell(gh auth status)",
-      "PowerShell(winget --version)"
+      "PowerShell(winget --version)",
+      "Bash(npx tsc *)"
     ]
   }
 }
