@@ -134,6 +134,7 @@ interface BundleItem {
   title: string;
   description: string;
   value: string;
+  downloadHref?: string;
 }
 
 function BundleCard({ item }: { item: BundleItem }) {
@@ -149,6 +150,15 @@ function BundleCard({ item }: { item: BundleItem }) {
         <h3 className="text-white font-bold text-lg leading-snug mb-2">{item.title}</h3>
         <p className="text-slate-400 text-sm leading-relaxed">{item.description}</p>
       </div>
+      {item.downloadHref && (
+        <a
+          href={item.downloadHref}
+          download
+          className="text-[#EF9F27] text-sm font-semibold hover:text-[#d98e1f] transition-colors mt-auto"
+        >
+          Download the template →
+        </a>
+      )}
     </div>
   );
 }
@@ -163,7 +173,7 @@ function EmailCaptureForm() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
     setError("");
@@ -275,6 +285,7 @@ const BUNDLE: BundleItem[] = [
     description:
       "A done-for-you carrier packet you fill in once and use forever.",
     value: "85",
+    downloadHref: "/downloads/carrier-credibility-packet.docx",
   },
 ];
 
