@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git clone *)",
+      "Bash(npx next *)",
+      "Bash(gh auth *)",
+      "PowerShell(gh auth status)",
+      "PowerShell(winget --version)"
+    ]
+  }
+}
