@@ -23,7 +23,7 @@ function BrokerCalculator() {
 
   return (
     <div className="bg-white/[0.06] border border-white/10 rounded-2xl p-6 md:p-8 w-full max-w-xl">
-      <p className="text-[#EF9F27] text-xs font-bold tracking-widest uppercase mb-5">
+      <p className="text-[#D1B66B] text-xs font-bold tracking-widest uppercase mb-5">
         Broker Rate Exposure Calculator
       </p>
 
@@ -41,7 +41,7 @@ function BrokerCalculator() {
               placeholder="2,200"
               value={carrierRate}
               onChange={(e) => setCarrierRate(e.target.value)}
-              className="w-full bg-white/[0.08] border border-white/15 rounded-lg pl-8 pr-4 py-2.5 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#EF9F27]/50 focus:border-[#EF9F27]/60 text-sm"
+              className="w-full bg-white/[0.08] border border-white/15 rounded-lg pl-8 pr-4 py-2.5 text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-[#D1B66B]/50 focus:border-[#D1B66B]/60 text-sm"
             />
           </div>
         </div>
@@ -53,14 +53,14 @@ function BrokerCalculator() {
           <select
             value={margin}
             onChange={(e) => setMargin(Number(e.target.value))}
-            className="w-full bg-white/[0.08] border border-white/15 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-[#EF9F27]/50 focus:border-[#EF9F27]/60 text-sm cursor-pointer appearance-none"
-            style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23EF9F27' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E\")", backgroundRepeat: "no-repeat", backgroundPosition: "right 12px center" }}
+            className="w-full bg-white/[0.08] border border-white/15 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:ring-2 focus:ring-[#D1B66B]/50 focus:border-[#D1B66B]/60 text-sm cursor-pointer appearance-none"
+            style={{ backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23D1B66B' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E\")", backgroundRepeat: "no-repeat", backgroundPosition: "right 12px center" }}
           >
-            <option value={18} className="bg-[#0A1628]">Dry van (~18% margin)</option>
-            <option value={22} className="bg-[#0A1628]">Reefer (~22% margin)</option>
-            <option value={28} className="bg-[#0A1628]">Flatbed (~28% margin)</option>
-            <option value={35} className="bg-[#0A1628]">Hazmat / specialized (~35% margin)</option>
-            <option value={44} className="bg-[#0A1628]">Spot market peak (~44% margin)</option>
+            <option value={18} className="bg-[#253344]">Dry van (~18% margin)</option>
+            <option value={22} className="bg-[#253344]">Reefer (~22% margin)</option>
+            <option value={28} className="bg-[#253344]">Flatbed (~28% margin)</option>
+            <option value={35} className="bg-[#253344]">Hazmat / specialized (~35% margin)</option>
+            <option value={44} className="bg-[#253344]">Spot market peak (~44% margin)</option>
           </select>
         </div>
 
@@ -69,7 +69,7 @@ function BrokerCalculator() {
             <label className="text-sm font-medium text-slate-300">
               Loads per week
             </label>
-            <span className="text-sm font-bold text-[#EF9F27]">{loadsPerWeek}</span>
+            <span className="text-sm font-bold text-[#D1B66B]">{loadsPerWeek}</span>
           </div>
           <input
             type="range"
@@ -77,7 +77,7 @@ function BrokerCalculator() {
             max={20}
             value={loadsPerWeek}
             onChange={(e) => setLoadsPerWeek(Number(e.target.value))}
-            className="w-full accent-[#EF9F27] cursor-pointer"
+            className="w-full accent-[#D1B66B] cursor-pointer"
           />
           <div className="flex justify-between text-xs text-slate-500 mt-1">
             <span>1</span>
@@ -90,7 +90,7 @@ function BrokerCalculator() {
       <div
         className={`rounded-xl border transition-opacity duration-300 ${
           hasValue
-            ? "border-[#EF9F27]/30 bg-[#EF9F27]/[0.08] opacity-100"
+            ? "border-[#D1B66B]/30 bg-[#D1B66B]/[0.08] opacity-100"
             : "border-white/10 bg-white/[0.04] opacity-50"
         }`}
       >
@@ -103,7 +103,7 @@ function BrokerCalculator() {
           </div>
           <div className="flex items-center justify-between px-5 py-3.5">
             <span className="text-sm text-slate-300">Broker kept</span>
-            <span className="font-bold text-[#EF9F27] text-base">
+            <span className="font-bold text-[#D1B66B] text-base">
               {hasValue ? formatDollar(brokerKept) : "—"}
             </span>
           </div>
@@ -111,7 +111,7 @@ function BrokerCalculator() {
             <span className="text-sm font-semibold text-white">
               You left on the table this year
             </span>
-            <span className="font-black text-[#EF9F27] text-xl">
+            <span className="font-black text-[#D1B66B] text-xl">
               {hasValue ? formatDollar(annualLoss) : "—"}
             </span>
           </div>
@@ -141,8 +141,8 @@ function BundleCard({ item }: { item: BundleItem }) {
   return (
     <div className="bg-[#0F1E35] border border-white/10 rounded-2xl p-7 flex flex-col gap-4">
       <div className="flex items-start justify-between gap-4">
-        <span className="text-[#EF9F27] font-black text-3xl leading-none">{item.number}</span>
-        <span className="bg-[#EF9F27]/15 text-[#EF9F27] text-xs font-bold px-3 py-1 rounded-full border border-[#EF9F27]/20 shrink-0">
+        <span className="text-[#D1B66B] font-black text-3xl leading-none">{item.number}</span>
+        <span className="bg-[#D1B66B]/15 text-[#D1B66B] text-xs font-bold px-3 py-1 rounded-full border border-[#D1B66B]/20 shrink-0">
           ${item.value} value
         </span>
       </div>
@@ -154,7 +154,7 @@ function BundleCard({ item }: { item: BundleItem }) {
         <a
           href={item.downloadHref}
           download
-          className="text-[#EF9F27] text-sm font-semibold hover:text-[#d98e1f] transition-colors mt-auto"
+          className="text-[#D1B66B] text-sm font-semibold hover:text-[#B29B5B] transition-colors mt-auto"
         >
           Download the template →
         </a>
@@ -196,19 +196,19 @@ function EmailCaptureForm() {
   if (submitted) {
     return (
       <div className="text-center py-10">
-        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#EF9F27]/15 border border-[#EF9F27]/40 mb-6">
-          <svg className="w-8 h-8 text-[#EF9F27]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#D1B66B]/15 border border-[#D1B66B]/40 mb-6">
+          <svg className="w-8 h-8 text-[#D1B66B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h3 className="text-[#0A1628] text-2xl font-bold mb-2">Check your inbox.</h3>
+        <h3 className="text-[#253344] text-2xl font-bold mb-2">Check your inbox.</h3>
         <p className="text-slate-500">Your toolkit is on its way to {email}.</p>
       </div>
     );
   }
 
   const inputClass =
-    "w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-[#0A1628] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#EF9F27]/40 focus:border-[#EF9F27]/60 text-sm transition";
+    "w-full bg-white border border-slate-200 rounded-xl px-4 py-3 text-[#253344] placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-[#D1B66B]/40 focus:border-[#D1B66B]/60 text-sm transition";
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4 w-full max-w-md mx-auto">
@@ -251,7 +251,7 @@ function EmailCaptureForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full bg-[#EF9F27] hover:bg-[#d98e1f] disabled:opacity-70 text-[#0A1628] font-bold py-3.5 rounded-xl text-base transition-colors flex items-center justify-center gap-2"
+        className="w-full bg-[#D1B66B] hover:bg-[#B29B5B] disabled:opacity-70 text-[#253344] font-bold py-3.5 rounded-xl text-base transition-colors flex items-center justify-center gap-2"
       >
         {loading ? "Sending..." : "Get the free toolkit →"}
       </button>
@@ -293,7 +293,7 @@ const TOTAL_VALUE = BUNDLE.reduce((sum, item) => sum + Number(item.value), 0);
 
 export default function HomeShell() {
   return (
-    <div className="min-h-screen bg-[#0A1628] text-white">
+    <div className="min-h-screen bg-[#253344] text-white">
       <Nav />
 
       <main>
@@ -309,12 +309,12 @@ export default function HomeShell() {
           <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
             {/* Left — copy */}
             <div>
-              <p className="text-[#EF9F27] text-xs font-bold tracking-widest uppercase mb-6">
+              <p className="text-[#D1B66B] text-xs font-bold tracking-widest uppercase mb-6">
                 Free Toolkit for Trucking Carriers
               </p>
               <h1 className="text-4xl md:text-5xl font-black leading-[1.1] tracking-tight mb-6">
                 Your broker knows exactly what the shipper paid.{" "}
-                <span className="text-[#EF9F27]">Now you will too.</span>
+                <span className="text-[#D1B66B]">Now you will too.</span>
               </h1>
               <p className="text-slate-300 text-lg leading-relaxed max-w-xl">
                 Put in what they paid you. See what they kept. Then get the exact scripts,
@@ -333,16 +333,16 @@ export default function HomeShell() {
         <section id="toolkit" className="px-6 py-24 bg-white">
           <div className="max-w-5xl mx-auto">
             <div className="mb-12">
-              <p className="text-[#EF9F27] text-xs font-bold tracking-widest uppercase mb-4">
+              <p className="text-[#D1B66B] text-xs font-bold tracking-widest uppercase mb-4">
                 What&apos;s included
               </p>
-              <h2 className="text-3xl md:text-4xl font-black leading-snug mb-4 text-[#0A1628]">
+              <h2 className="text-3xl md:text-4xl font-black leading-snug mb-4 text-[#253344]">
                 Three tools. One download.{" "}
-                <span className="text-[#EF9F27]">Free.</span>
+                <span className="text-[#D1B66B]">Free.</span>
               </h2>
               <p className="text-slate-600 text-lg max-w-xl">
                 Total value{" "}
-                <span className="text-[#0A1628] font-bold">${TOTAL_VALUE}</span>.
+                <span className="text-[#253344] font-bold">${TOTAL_VALUE}</span>.
                 You pay nothing. We want you to see what you&apos;re leaving on
                 the table before you decide if you want our help.
               </p>
@@ -362,21 +362,21 @@ export default function HomeShell() {
             <div className="grid lg:grid-cols-2 gap-16 items-center">
               {/* Left — pitch */}
               <div>
-                <p className="text-[#EF9F27] text-xs font-bold tracking-widest uppercase mb-4">
+                <p className="text-[#D1B66B] text-xs font-bold tracking-widest uppercase mb-4">
                   Get instant access
                 </p>
-                <h2 className="text-3xl md:text-4xl font-black leading-snug mb-6 text-[#0A1628]">
+                <h2 className="text-3xl md:text-4xl font-black leading-snug mb-6 text-[#253344]">
                   Stop running blind. Get the toolkit.
                 </h2>
                 <ul className="space-y-4">
                   {[
-                    "Know what the shipper actually paid on every load",
-                    "Have the right words when you call a shipper cold",
-                    "Show up looking like a real operation, not a one-truck operation scrambling for business",
+                    "See exactly what the shipper paid on every load you haul.",
+                    "Say the right thing the moment a shipper tells you they already have a broker.",
+                    "Look like a carrier a shipper can trust on sight, not one they have to vet twice for fraud.",
                   ].map((point) => (
                     <li key={point} className="flex items-start gap-3 text-slate-600 text-sm leading-relaxed">
-                      <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full bg-[#EF9F27]/20 border border-[#EF9F27]/40 flex items-center justify-center">
-                        <svg className="w-3 h-3 text-[#EF9F27]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <span className="mt-0.5 shrink-0 w-5 h-5 rounded-full bg-[#D1B66B]/20 border border-[#D1B66B]/40 flex items-center justify-center">
+                        <svg className="w-3 h-3 text-[#D1B66B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
                         </svg>
                       </span>
@@ -395,15 +395,23 @@ export default function HomeShell() {
         </section>
       </main>
 
+      {/* ── Soft CTA ── */}
+      <p className="text-center text-sm text-slate-400 py-8 px-6">
+        Want more than the toolkit?{" "}
+        <a href="mailto:paolo@zonport.com" className="text-slate-300 hover:text-white transition-colors">
+          Email us.
+        </a>
+      </p>
+
       {/* ── Footer ── */}
       <footer className="border-t border-white/10 py-10 px-6">
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-slate-500 text-sm">
-          <span>© 2026 Zon Logistics</span>
+          <span>© 2026 Zonport</span>
           <a
-            href="mailto:paolo@zonlogistics.com"
+            href="mailto:paolo@zonport.com"
             className="hover:text-white transition-colors"
           >
-            paolo@zonlogistics.com
+            paolo@zonport.com
           </a>
         </div>
       </footer>
